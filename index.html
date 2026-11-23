@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>示例网页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft Yahei", sans-serif;
+        }
+        body {
+            background-color: #f0f7ff;
+            color: #333;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        h1 {
+            text-align: center;
+            color: #2563eb;
+            margin-bottom: 24px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+        .btn-box {
+            text-align: center;
+            margin-top: 30px;
+        }
+        button {
+            padding: 12px 28px;
+            border: none;
+            background-color: #2563eb;
+            color: white;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #1d4ed8;
+        }
+        .info {
+            margin-top: 20px;
+            padding: 16px;
+            background-color: #eff6ff;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>欢迎访问我的网页</h1>
+        <p>这是一个基础 HTML + CSS + JavaScript 示例页面，响应式适配手机和电脑。</p>
+        <p>你可以修改文字、颜色、布局，拓展成你想要的网站。</p>
+        <div class="info">
+            <p>📅 当前时间：<span id="timeText"></span></p>
+        </div>
+        <div class="btn-box">
+            <button onclick="showMessage()">点击我</button>
+        </div>
+    </div>
+
+    <script>
+        // 显示时间
+        function updateTime() {
+            const now = new Date();
+            document.getElementById('timeText').innerText = now.toLocaleString('zh-CN');
+        }
+        updateTime();
+        setInterval(updateTime, 1000);
+
+        // 按钮弹窗
+        function showMessage() {
+            alert('你好呀！');
+        }
+    </script>
+</body>
+</html>
